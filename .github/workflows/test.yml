@@ -1,9 +1,18 @@
-- name: First interaction
-  uses: actions/first-interaction@v1.3.0
-  with:
-    # Token for the repository. Can be passed in using {{ secrets.GITHUB_TOKEN }}
-    repo-token: ${{ secrets.GITHUB_TOKEN }}
-    # Comment to post on an individual's first issue
-    issue-message: "Welcome! Thank you for opening your first issue."
-    # Comment to post on an individual's first pull request
-    pr-message: "Welcome! Thank you for opening your first pull request."
+name: First interaction
+
+on:
+  issues:
+    types: [opened]
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: First interaction
+        uses: actions/first-interaction@v1.3.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: "Welcome! Thank you for opening your first issue."
+          pr-message: "Welcome! Thank you for opening your first pull request."
