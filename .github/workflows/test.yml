@@ -8,5 +8,5 @@ jobs:
       - name: "Greeter"
         uses: JJ/pr-greeting-action@releases/v1
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.SECRET_TOKEN }}
           greeting: "Hey **#** welcome to this repo"
