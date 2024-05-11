@@ -15,7 +15,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "🍏 This job's status is ${{ secrets.SECRET_TOKEN }}."
         env:
           GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
             
